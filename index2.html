@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bulma - Tabs</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+        <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+        <link rel="stylesheet" href="tabs.css">
+    </head>
+    <body>
+        <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item" >
+                    <img src="favicon.ico">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start is-link">
+                    <a class="navbar-item" href="index.html">
+                        Landing Page
+                    </a>  
+                </div>
+        </nav>
+        <section class="hero is-dark">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                    SF Fire Department Visualization: Lone Mountain/USF
+                    </h1>
+                    <h2 class="subtitle">
+                    Team Tony and Friends
+                    </h2>
+                </div>
+            </div>
+            <div class="tabs is-boxed is-centered main-menu" id="nav">
+                <ul>
+                    <li data-target="pane-1" id="1" class="is-active">
+                        <a>
+                            <span class="icon is-small"><i class="fa fa-home"></i></span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li data-target="pane-2" id="2">
+                        <a>
+                            <span class="icon is-small"><i class="fab fa-empire"></i></span>
+                            <span>Data Processing Content</span>
+                        </a>
+                    </li>
+                    <li data-target="pane-3" id="3">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-chart-bar"></i></span>
+                            <span>Visualization 1</span>
+                        </a>
+                    </li>
+                    <li data-target="pane-4" id="4">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-chart-bar"></i></span>
+                            <span>Visualization 2</span>
+                        </a>
+                    </li>
+                    <li data-target="pane-5" id="5">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-chart-bar"></i></span>
+                            <span>Visualization 3</span>
+                        </a>
+                    </li>
+                    <li data-target="pane-6" id="6">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-image"></i></span>
+                            <span>Prototypes</span>
+                        </a>
+                    </li>
+                    <li data-target="pane-7" id="7">
+                        <a>
+                            <span class="icon is-small"><i class="fas fa-info-circle"></i></span>
+                            <span>About</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane is-active" id="pane-1" class="level">
+                    <div class="content">
+                        <h1>Project Theme</h1>
+                            <p>
+                                The Theme of our Project is to focus on the area of USF/Lone Mountain. 
+                                We chose this specific area because we all go to school here and visualizing 
+                                the data for this specific area will mean more to us than visualizing 
+                                something that does not relate to us in any way. Hopefully by the end of 
+                                this we will have 3 visualizations that all relate to USF and will show 
+                                us something unique that none of us had already known. 
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pane-3">
+                    <div class="content">
+                        <h3>John's Visualization</h3>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pane-4">
+                    <div class="content">
+                        <h3>Tony's Visualization</h3>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pane-5">
+                    <div class="content">
+                        <h3>Derrick's Visualization</h3>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pane-6">
+                    <div class="content">
+                        <h3>Prototypes</h3>
+                    </div>
+                </div>
+                <div class = "tab-pane" id="pane-7">
+                    <div class ="content">
+                        <h2 id="about">
+        About Us
+      </h2>
+
+      <div class="media">
+        <div class="media-left">
+          <p class="image is-128x128">
+            <!-- todo: replace with your profile image -->
+            <img src="me.jpg" style="transform:rotate(90deg);">
+          </p>
+        </div>
+
+        <div class="media-content">
+            <p>
+              <!-- todo: replace with your information -->
+              <strong>Tony Jimenez</strong>
+              <br/>
+              Hello, my name is Tony Jimenez. I am a Junior in my 6th 
+              semester here at the University of San Francisco. I am majoring in Computer Science and expect 
+              to graduate in the Spring of 2020. Computers and Video Games are some of my 
+              favorite things so one of my goals is to work in that field, but realistically, working in any field would be amazing as I am already doing something I love.
+              <br/>
+              <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+              &bullet;<a href="https://github.com/Tjimenez3">
+                <span class="fab fa-github"></span>
+                <span>Github</span>
+              </a>
+              <br><b>Contact Info:</b>
+                <br>&bullet;Email:  <a href="tjimenez3@dons.usfca.edu">tjimenez3@dons.usfca.edu 
+                </a> 
+            </p>
+
+        </div>
+      </div>
+
+      <div class="media">
+        <div class="media-left">
+          <p class="image is-128x128">
+            <!-- todo: replace with your profile image -->
+            <img src="me2.jpg" >
+          </p>
+        </div>
+
+        <div class="media-content">
+            <p>
+              <!-- todo: replace with your information -->
+              <strong>John Murray</strong>
+              <br/>
+              Hi, my name is John Murray, and I am a senior at the University of San Francisco studying Computer Science. I plan on graduating in Spring of 2019. I am a huge Bay Area sports fan, avid coffee lover, and gym enthusiast. I’m hoping to pursue a Master’s Degree from the University of San Francisco as well. 
+              <br/>
+              <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+              &bullet;<a href="https://github.com/johnrmurray">
+                <span class="fab fa-github"></span>
+                <span>Github</span>
+              </a>
+              <a href="https://www.linkedin.com/in/john-murray-61b576178/">
+                <span class="fab fa-linkedin"></span>
+                <span>LinkedIn</span>
+              </a>
+              <br><b>Contact Info:</b>
+                <br>&bullet;Email:  
+                <a href="mailto:jrmurray2@dons.usfca.edu">jrmurray2@dons.usfca.edu 
+                </a> 
+            </p>
+
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <p class="image is-128x128">
+            <!-- todo: replace with your profile image -->
+            <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/28467645_1544087655640651_3662163967019089818_n.jpg?_nc_cat=103&_nc_ht=scontent-sjc3-1.xx&oh=5f01aa3e77094a9a623c8a05fce0cb45&oe=5CF0D231">
+          </p>
+        </div>
+
+        <div class="media-content">
+            <p>
+              <!-- todo: replace with your information -->
+              <strong>Derrick Shiu</strong>
+              <br/>
+              My name is Derrick Shiu, and I'm currently a senior Computer Science Major at USF, where I plan to graduate in Spring of 2019. I am a certified lifeguard, and I help my family with the West Coast Lion Dance Troupe, a Chinese lion dance group based out of Daly City. Video games are one of my favorite hobbies, and I'd love to find my way into that field after graduating.
+              <br/>
+              <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+              &bullet;<a href="https://github.com/dashiu/">
+                <span class="fab fa-github"></span>
+                <span>Github</span>
+              </a>
+              &bullet;
+              <a href="https://www.linkedin.com/in/derrick-shiu-663748171/">
+                <span class="fab fa-linkedin"></span>
+                <span>LinkedIn</span>
+              </a>
+              <br><b>Contact Info:</b>
+                <br>&bullet;Email:
+                <a href="mailto:dashiu@dons.usfca.edu">dashiu@dons.usfca.edu 
+                </a>  
+            </p>
+
+        </div>
+      </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane" id="pane-2">
+                    <div class="content">
+                        <h1>Data Set</h1>
+                        <p>This data set is attributed to Open Data and DataSF. 
+                            The original link can for the data set can be found 
+                            <a href= "https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3" style="color: rgb(0,0,255)">here</a>
+                        </p>
+                        <p> The original data set has 4,886,219 Rows and 34 Columns. It is data all about Fire Department Calls for Service. The website says that there may be multiple records for each call numbers since this logs the responses. This could mean that both a Fire Engine and an Ambulance could have been dispached to the scene and would then record 2 responses in the data set. An example of the type of data it contains is 'Call Type' which would tell you what the incident was or 'Neighborhood' which would tell you which neighborhood this happened in.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <small>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span>Back to Top</span>
+        </a>
+        <br/>
+        <a href="https://usf-cs360-spring2019.github.io/index.html">CS 360/560 Data Visualization</a>
+        &bullet;
+        <a href="https://myusf.usfca.edu/arts-sciences/computer-science">Department of Computer Science</a>
+        &bullet;
+        <a href="https://www.usfca.edu/">University of San Franciscio</a>
+      </small>
+    </div>
+  </footer>
+
+    <script src="bulma.js"></script>
+    <script src="tabs.js"></script>
+</body>
+</html>

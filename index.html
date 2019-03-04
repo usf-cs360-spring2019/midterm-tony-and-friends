@@ -1,134 +1,117 @@
 <!DOCTYPE html>
 <html>
 
-<!-- head -->
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>CS 360/560 Spring 2019</title>
-
-  <!-- bulma 0.7.2 and font awesome v5.7.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Midterm Project</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="landing.css">
 </head>
 
-<!-- body -->
 <body>
+    <section class="hero is-info is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                            <img src="favicon.ico" alt="Logo">
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="index2.html">
+                                    <span class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </span>
+                                    <span>Home</span>
+                                </a>
+                            </span>
+                            <!-- <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="#">
+                                    <span class="icon">
+                                        <i class="fa fa-tasks"></i>
+                                    </span>
+                                    <span>Data and Processing Content</span>
+                                </a>
+                            </span>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="#">
+                                    <span class="icon">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </span>
+                                    <span>Visualization 1</span>
+                                </a>
+                            </span>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="#">
+                                    <span class="icon">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </span>
+                                    <span>Visualization 2</span>
+                                </a>
+                            </span>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="#">
+                                    <span class="icon">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </span>
+                                    <span>Visualization 3</span>
+                                </a>
+                            </span>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="#">
+                                    <span class="icon">
+                                        <i class="fa fa-photo"></i>
+                                    </span>
+                                    <span>Prototypes</span>
+                                </a>
+                            </span>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="#">
+                                    <span class="icon">
+                                       <i class="fa fa-info-circle"></i>
+                                    </span>
+                                    <span>About</span>
+                                </a>
+                            </span> -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            </div>
 
-  <!-- header -->
-  <section class="hero is-primary is-bold">
-    <!-- todo: change assignment and name -->
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          SF Fire Department Visualization: Lone Mountain/USF
-        </h1>
-        <h2 class="subtitle">
-          Team Tony and Friends
-        </h2>
-      </div>
-    </div>
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="column is-6 is-offset-3">
+                        <h1 class="title">
+                            SF Fire Department Visualization: Lone Mountain/USF
+                        </h1>
+                        <p>
+                        	Team Tony And Friends
+                        </p>
+                        <h2 class="subtitle">
+                           Hello and Welcome to our Data Visualization Website.
+                           We will be taking data about the SF Fire Department
+                           and we will try to show you something about that data through some visualizations. Enjoy!
+                        </h2>
+                </div>
+            </div>
 
-    <!-- todo: change navigation as needed -->
-    <div class="hero-foot">
-      <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-
-          <div class="navbar-brand">
-            <a class="navbar-item" href="#top">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Home</span>
-            </a>
-
-            <a class="navbar-item" href="data_processing.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Data and Processing Content</span>
-            </a>
-
-
-            <a class="navbar-item" href="visualization_john.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Visualization (John Murray)</span>
-            </a>
-
-            <a class="navbar-item" href="visualization_tony.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Visualization (Tony Jimenez)</span>
-            </a>
-
-            <a class="navbar-item" href="visualization_derrick.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Visualization (Derrick Shiu)</span>
-            </a>
-
-            <a class="navbar-item" href="prototype.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Prototype Content</span>
-            </a>
-          </div>
-
-          <div class="navbar-end">
-
-            <a class="navbar-item" href="about.html">
-              <span class="icon">
-                <i class="fas fa-info-circle"></i>
-              </span>
-              <span>About</span>
-            </a>
-          </div>
-
-        </nav>
-      </div>
-    </div>
-  </section>
-
-  <!-- todo: add sections as necessary -->
-  <section class="section">
-    <div class="container content">
-      <!-- todo: modify as necessary (or move visualizations to separate pages) -->
-
-
-      <h3>Project Theme</h3>
-      <p>
-        The Theme of our Project is to focus on the area of USF/Lone Mountain. We chose this specific area because we all go to school here and visualizing the data for this specific area will mean more to us than visualizing something that does not relate to us in any way. Hopefully by the end of this we will have 3 visualizations that all relate to USF and will show us something unique that none of us had already known. 
-      </p>
-    </div>
-  </section>
-
-  <!-- separator between sections -->
-  <hr class="container">
-
-  <!-- footer -->
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <small>
-        <a href="#top">
-          <span class="fas fa-arrow-up"></span>
-          <span>Back to Top</span>
-        </a>
-        <br/>
-        <a href="/">CS 360/560 Data Visualization</a>
-        &bullet;
-        <a href="https://myusf.usfca.edu/arts-sciences/computer-science">Department of Computer Science</a>
-        &bullet;
-        <a href="https://www.usfca.edu/">University of San Franciscio</a>
-      </small>
-    </div>
-  </footer>
-
-<!-- end body and html -->
+    </section>
+    <script async type="text/javascript" src="bulma.js"></script>
 </body>
+
 </html>
