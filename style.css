@@ -1,0 +1,44 @@
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+svg {
+	background-color: whitesmoke;
+}
+
+.cell {
+	stroke: white;
+	stroke-width: 1px;
+}
+
+.axis path, .axis line {
+	stroke: none;
+	fill: none;
+}
+
+.axis text {
+	fill: dimgrey;
+	font-size: 12px;
+}
+
+.legend line, .legend path {
+	stroke: dimgrey;
+	fill: none;
+}
+
+.legend text {
+	font-size: 10px;
+	fill: dimgrey;
+}
+/* .cell:hover {
+   stroke: #F00;
+   stroke-width: 3px;
+   fill: #F00;
+ }
+.rect:hover {
+  fill: #F00;
+} */
+
