@@ -137,7 +137,7 @@
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
       <h3>John's Visualization</h3>
-      <svg width="900" height="500"></svg>
+      <svg width="890" height="600"></svg>
   <script> 
     function generateRandomData(days){
       var randomData = [];
@@ -584,7 +584,7 @@ var ordinal = d3.scaleOrdinal()
     
     ////// SETUP CONTAINERS
     var svg = d3.select('svg')
-    var margin = {top: 40, right: 100, bottom: 50, left: 60};
+    var margin = {top: 40, right: 110, bottom: 50, left: 60};
     var height = +svg.attr('height') - margin.top - margin.bottom;
     var width = +svg.attr('width') - margin.left - margin.right;
     var chartPadding = 15;
@@ -597,8 +597,8 @@ var ordinal = d3.scaleOrdinal()
     
     //Create Title 
     svg.append("text")
-      .attr("x", 315)
-      .attr("y", 15)
+      .attr("x", 345)
+      .attr("y", 20)
       .style("text-anchor", "middle")
       .text("Number of Fires that occur in the Lone Mountain/USF Area during each Month from 2009-2018");
 
@@ -633,7 +633,7 @@ var ordinal = d3.scaleOrdinal()
 
     svg.select(".legendOrdinal")
       .call(legendOrdinal)
-      .attr("transform" ,"translate(" + 810 +"," + 46 +")" );
+      .attr("transform" ,"translate(" + 790 +"," + 46 +")" );
 
     ////// COMPOSE GENERATORS
 // .range(["#c43141", "#ca3a42", "#d04344", "#e15c48", "#e66549", "#eb6e49", "#f7894b", "#fb934d", "#fa9d4f", "#f6bc58", "#f5c75f", "#f4d166"]);
