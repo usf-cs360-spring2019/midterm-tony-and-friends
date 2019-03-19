@@ -91,7 +91,7 @@ var drawHeatmap = function() {
  */
 var drawTitle = function() {
 	var title = svg.append("text")
-		.text("SF Fires from 2009-2018")
+		.text("Amount of Fires in the Lone Mountain/USF area from 2009-2018")
 		.attr("id", "title")
 		.attr("x", config.margin.left)
 		.attr("y", 0)

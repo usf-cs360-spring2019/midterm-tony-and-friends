@@ -126,7 +126,6 @@
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
       <h3>Tony's Visualization</h3>
-       <svg id="tab1" width = "900" height="500"></svg>
        <script>
                             /* helper method to make translating easier */
     var translate = function(x, y) {
@@ -141,8 +140,8 @@
     config.margin = {
       top: 50,
       right: 10,
-      bottom: 20,
-      left: 40
+      bottom: 60,
+      left: 80
     };
     config.plot = {
       width: config.svg.width - config.margin.right - config.margin.left,
@@ -153,7 +152,7 @@
       height: 15
     };
     // create svg based on config
-    var svg = d3.select("body").select("svg#tab1")
+    var svg = d3.select("body").append("svg")
       .attr("width", config.svg.width)
       .attr("height", config.svg.height);
     // create plot area based on config
@@ -260,6 +259,21 @@
       d3.selectAll("rect").on("mouseover", function(d) {  d3.select(this).style("fill", "black"); })
       
        d3.selectAll("rect").on("mouseout", function(d) {  d3.select(this).style("fill", function(d){return colorScale(d.value)}); })
+       svg.append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "end")
+      .attr("x", 530)
+      .attr("y", 478)
+      .text("Months");
+
+      svg.append("text")
+      .attr("class", "y label")
+      .attr("text-anchor", "end")
+      .attr("y", 14)
+      .attr("x", -210)
+      .attr("dy", ".75em")
+      .attr("transform", "rotate(-90)")
+      .text("Years");
     }
     
     //d3.selectAll("rect").append("title").text("Hello");
