@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Midterm Project</title>
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
   <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
@@ -120,6 +122,29 @@
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
       <h3>Derrick's Visualization</h3>
+
+      <div id="buttons">
+          <input name="springButton" 
+                 type="button" 
+                 value="Spring" 
+                 onclick="updateSpringData()" />
+          <input name="summerButton" 
+                 type="button" 
+                 value="Summer" 
+                 onclick="updateSummerData()" />
+          <input name="fallButton" 
+                 type="button" 
+                 value="Fall" 
+                 onclick="updateFallData()" />
+          <input name="winterButton" 
+                 type="button" 
+                 value="Winter" 
+                 onclick="updateWinterData()" />
+      </div>
+
+      <svg id="Derrick" width="1200" height="800" style="background-color: whitesmoke; border: 1px solid black;">
+      </svg>
+      <script src="stackedbar.js"></script>
 
     </div>
   </section>
