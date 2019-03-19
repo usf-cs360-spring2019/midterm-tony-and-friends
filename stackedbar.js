@@ -106,6 +106,8 @@ function createChart(seasons, color) {
 
     console.log(layers);
 
+    var gapLine = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
+
     var layer = svg.selectAll(".layer")
       .data(layers)
       .enter().append("g")
@@ -119,6 +121,26 @@ function createChart(seasons, color) {
         .attr("x", function(d) { return x(d[0]) + margin.left; })
         .attr("height", y.bandwidth() - 4)
         .attr("width", function(d) { return x(d[1]) - x(d[0]) });
+
+      layer.selectAll("text")
+        .data(function(d) { return d; })
+        .enter().append("text")
+        .attr("x", function(d) { return (x(d[0]) + margin.left) + ((x(d[1]) - x(d[0])) / 2); })             
+        .attr("y", function(d) { return y(d.data["Year"]) + margin.top + (y.bandwidth() / 2) + 6; })
+        .attr("text-anchor", "middle")  
+        .style("font-size", "12px") 
+        .style("fill", "black")
+        .text(function(d) { return d3.format("1d")((d[1] - d[0]) * 0.01 * d.data["Total"])});
+
+      layer.selectAll("line")
+        .data(gapLine)
+        .enter().append("line")
+        .attr("x1", margin.left / 5)
+        .attr("y1", function(d) { return (y(d + ", Outside Fire") + y.bandwidth() + margin.top) }) 
+        .attr("x2", plotWidth + margin.left)
+        .attr("y2", function(d) { return (y(d + ", Outside Fire") + y.bandwidth() + margin.top) })
+        .attr("stroke-width", 1)
+        .attr("stroke", "black");
 
     var legend = svg.selectAll(".legend")
       .data(seasons)
