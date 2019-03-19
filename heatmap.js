@@ -146,8 +146,8 @@ var drawLegend = function() {
 	var legend = svg.append("g")
 		.attr("id", "legend")
 		.attr("transform", translate(
-			config.svg.width - config.margin.right - config.legend.width,
-			(config.margin.top - config.legend.height) / 2));
+			config.svg.width - config.legend.width,
+			(config.legend.height) / 2));
 
 	// draw the color rectangle with gradient
 	legend.append("rect")
