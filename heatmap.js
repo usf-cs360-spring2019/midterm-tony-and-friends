@@ -178,7 +178,7 @@ var drawLegend = function() {
 
 	// calculate how much to shift legend group to fit in our plot area nicely
 	var bounds = legend.node().getBBox();
-	var xshift = config.svg.width - bounds.width;
+	var xshift = config.svg.width - bounds.width - 50;
 	var yshift = (config.margin.top - bounds.height) / 2;
 	legend.attr("transform", translate(xshift, yshift));
 };
