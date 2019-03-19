@@ -171,7 +171,7 @@ function createChart(seasons, color) {
         .text("Fires Occuring in the Lone Mountain/USF Area, By Percentage Based on Season from 2009 to 2018");
 
     svg.append("text")
-        .attr("x", ((plotWidth + margin.left) / 2))           
+        .attr("x", ((plotWidth + margin.left + margin.right) / 2))           
         .attr("y", plotHeight + margin.top + (margin.bottom /1.2))
         .attr("text-anchor", "middle")  
         .style("font-size", "14px")   
