@@ -112,9 +112,10 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="pane-4">
-                    <div class="content">
+                    <div class="tab-content">
                         <h3>Tony's Visualization</h3>
-                            <img src = "Sheet2.png">
+                            
+                                <svg id="tab1"></svg>
                             <p>
                               Hello
                               
@@ -151,7 +152,7 @@
     };
 
     // create svg based on config
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("body").select("svg#tab1")
       .attr("width", config.svg.width)
       .attr("height", config.svg.height);
 
