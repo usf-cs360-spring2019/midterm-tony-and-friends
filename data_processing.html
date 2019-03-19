@@ -6,18 +6,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CS 360/560 Spring 2019</title>
+  <title>Midterm Project</title>
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+  <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="tabs.css">
 </head>
 
 <!-- body -->
 <body>
-
+<nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item" >
+                    <img src="favicon.ico">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start is-link">
+                    <a class="navbar-item" href="index.html">
+                        Landing Page
+                    </a>  
+                </div>
+        </nav>
   <!-- header -->
-  <section class="hero is-primary is-bold">
+  <section class="hero is-dark">
     <!-- todo: change assignment and name -->
     <div class="hero-body">
       <div class="container">
@@ -36,7 +56,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
 
           <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
+            <a class="navbar-item" href="oldindex.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
@@ -47,7 +67,7 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Data and Processing Content</span>
+              <span>Data Processing Content</span>
             </a>
 
 
@@ -55,28 +75,28 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (John Murray)</span>
+              <span>Visualization 1</span>
             </a>
 
             <a class="navbar-item" href="visualization_tony.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Tony Jimenez)</span>
+              <span>Visualization 2</span>
             </a>
 
             <a class="navbar-item" href="visualization_derrick.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Derrick Shiu)</span>
+              <span>Visualization 3</span>
             </a>
 
             <a class="navbar-item" href="prototype.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Prototype Content</span>
+              <span>Prototypes</span>
             </a>
           </div>
 
@@ -98,11 +118,17 @@
   <!-- todo: add sections as necessary -->
   <section class="section">
     <div class="container content">
-      <!-- todo: modify as necessary (or move visualizations to separate pages) -->
-      <h3>Data Set</h3>
-      <p>This data set is attributed to Open Data and DataSF. The original link can for the data set can be found <a href= "https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3">here</a>
-      </p>
-      <p> The original data set has 4,886,219 Rows and 34 Columns. It is data all about Fire Department Calls for Service. The website says that there may be multiple records for each call numbers since this logs the responses. This could mean that both a Fire Engine and an Ambulance could have been dispached to the scene and would then record 2 responses in the data set. An example of the type of data it contains is 'Call Type' which would tell you what the incident was or 'Neighborhood' which would tell you which neighborhood this happened in.<p>
+                      
+                    
+                        <h1>Data Set</h1>
+                        <p>This data set is attributed to Open Data and DataSF. 
+                            The original link can for the data set can be found 
+                            <a href= "https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3" style="color: rgb(0,0,255)">here</a>
+                        </p>
+                        <p> The original data set has 4,886,219 Rows and 34 Columns. It is data all about Fire Department Calls for Service. The website says that there may be multiple records for each call numbers since this logs the responses. This could mean that both a Fire Engine and an Ambulance could have been dispached to the scene and would then record 2 responses in the data set. An example of the type of data it contains is 'Call Type' which would tell you what the incident was or 'Neighborhood' which would tell you which neighborhood this happened in.
+                        </p>
+                        <h1>Draft Data Processing</h1>
+                        <p> The original Data set was obviously way to large so we had to filter out some things and focus on some others. We decided that we want to focus our project on Fires in the Lone Mountain/USF area. We kept in all 34 Columns just in case we would want to add something later on with columns. We did however lower the amount of Rows in our Data Set. We filtered the data on the sfgov website. We filtered from over 4 million Rows to a manageable 4,326. If this proves to be too much data we might lower our bounds and filter it even more. We filtered by date and chose a 10 year range from 2009 to 2018. We also filtered it to only include the Lone Mountain/USF neighborhood. Finally we decided that we only wanted to include Outside Fires and Structure Fires. This would fit into our general theme of looking at fires over the years in the USF area.
 
     </div>
   </section>

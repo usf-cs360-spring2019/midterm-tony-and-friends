@@ -6,18 +6,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CS 360/560 Spring 2019</title>
+  <title>Midterm Project</title>
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+  <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="tabs.css">
 </head>
 
 <!-- body -->
 <body>
+  <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item" >
+                    <img src="favicon.ico">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start is-link">
+                    <a class="navbar-item" href="index.html">
+                        Landing Page
+                    </a>  
+                </div>
+        </nav>
 
   <!-- header -->
-  <section class="hero is-primary is-bold">
+  <section class="hero is-dark">
     <!-- todo: change assignment and name -->
     <div class="hero-body">
       <div class="container">
@@ -36,7 +57,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
 
           <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
+            <a class="navbar-item" href="oldindex.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
@@ -47,7 +68,7 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Data and Processing Content</span>
+              <span>Data Processing Content</span>
             </a>
 
 
@@ -55,28 +76,28 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (John Murray)</span>
+              <span>Visualization 1</span>
             </a>
 
             <a class="navbar-item" href="visualization_tony.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Tony Jimenez)</span>
+              <span>Visualization 2</span>
             </a>
 
             <a class="navbar-item" href="visualization_derrick.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Derrick Shiu)</span>
+              <span>Visualization 3</span>
             </a>
 
             <a class="navbar-item" href="prototype.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Prototype Content</span>
+              <span>Prototypes</span>
             </a>
           </div>
 
@@ -100,7 +121,12 @@
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
       <h3>Prototypes</h3>
-      <img src="DerrickDashboard.png">
+                        <h4>Prototype 1-John</h4>
+                            <img src = "JohnPrototype.png">
+                        <h4>Prototype 2-Tony</h4>
+                            <img src="Sheet2.png">
+                        <h4>Prototype 3-Derrick</h4>
+                            <img src="DerrickDashboard.png">
 
     </div>
   </section>

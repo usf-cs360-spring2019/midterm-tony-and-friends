@@ -1,30 +1,22 @@
 <!DOCTYPE html>
-<html>
-
-<!-- head -->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Midterm Project</title>
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- bulma 0.7.2 and font awesome v5.7.1 -->
-  <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
-  <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="tabs.css">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Midterm Project</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+        <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+        <link rel="stylesheet" href="tabs.css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="heatmap.js"></script>
   <script src="https://d3js.org/d3-color.v1.min.js"></script>
 <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
-</head>
-
-<!-- body -->
-<body>
-  <nav class="navbar is-dark">
+    </head>
+    <body>
+        <nav class="navbar is-dark">
             <div class="navbar-brand">
                 <a class="navbar-item" >
                     <img src="favicon.ico">
@@ -42,92 +34,27 @@
                     </a>  
                 </div>
         </nav>
-
-  <!-- header -->
-   <section class="hero is-dark">
-    <!-- todo: change assignment and name -->
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          SF Fire Department Visualization: Lone Mountain/USF
-        </h1>
-        <h2 class="subtitle">
-          Team Tony and Friends
-        </h2>
-      </div>
-    </div>
-
-  <div class="hero-foot">
-      <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-
-          <div class="navbar-brand">
-            <a class="navbar-item" href="oldindex.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Home</span>
-            </a>
-
-            <a class="navbar-item" href="data_processing.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Data Processing Content</span>
-            </a>
-
-
-            <a class="navbar-item" href="visualization_john.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Visualization 1</span>
-            </a>
-
-            <a class="navbar-item" href="visualization_tony.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Visualization 2</span>
-            </a>
-
-            <a class="navbar-item" href="visualization_derrick.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Visualization 3</span>
-            </a>
-
-            <a class="navbar-item" href="prototype.html">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Prototypes</span>
-            </a>
-          </div>
-
-          <div class="navbar-end">
-
-            <a class="navbar-item" href="about.html">
-              <span class="icon">
-                <i class="fas fa-info-circle"></i>
-              </span>
-              <span>About</span>
-            </a>
-          </div>
-
-        </nav>
-      </div>
-    </div>
-  </section>
-
-  <!-- todo: add sections as necessary -->
-  <section class="section">
-    <div class="container content">
-      <!-- todo: modify as necessary (or move visualizations to separate pages) -->
+        <section class="hero is-dark">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                    SF Fire Department Visualization: Lone Mountain/USF
+                    </h1>
+                    <h2 class="subtitle">
+                    Team Tony and Friends
+                    </h2>
+                </div>
+            </div>
+            
+          
       <h3>Tony's Visualization</h3>
-       <svg id="tab1" width = "900" height="500"></svg>
-       <script>
+                            
+                                <svg id="tab1" width = "900" height="500"></svg>
+                            <p>
+                              Hello
+                              
+                            </p>
+                            <script>
                             /* helper method to make translating easier */
     var translate = function(x, y) {
       return "translate(" + x + "," + y + ")";
@@ -265,15 +192,7 @@
     //d3.selectAll("rect").append("title").text("Hello");
 </script>
 
-    </div>
-  </section>
-
-  <!-- separator between sections -->
-  <hr class="container">
-
-
-
-  <!-- footer -->
+    <!-- footer -->
   <footer class="footer">
     <div class="content has-text-centered">
       <small>
@@ -282,7 +201,7 @@
           <span>Back to Top</span>
         </a>
         <br/>
-        <a href="/">CS 360/560 Data Visualization</a>
+        <a href="https://usf-cs360-spring2019.github.io/index.html">CS 360/560 Data Visualization</a>
         &bullet;
         <a href="https://myusf.usfca.edu/arts-sciences/computer-science">Department of Computer Science</a>
         &bullet;
@@ -291,6 +210,7 @@
     </div>
   </footer>
 
-<!-- end body and html -->
+    <script src="bulma.js"></script>
+    <script src="tabs.js"></script>
 </body>
 </html>

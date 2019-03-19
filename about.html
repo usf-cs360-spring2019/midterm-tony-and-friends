@@ -2,22 +2,41 @@
 <html>
 
 <!-- head -->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <title>Midterm Project</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+        <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+        <link rel="stylesheet" href="tabs.css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="heatmap.js"></script>
+  <script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
-  <title>CS 360/560 Spring 2019</title>
-
-  <!-- bulma 0.7.2 and font awesome v5.7.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-</head>
+    </head>
 
 <!-- body -->
 <body>
-
+<body>
+        <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item" >
+                    <img src="favicon.ico">
+                </a>
+                
+            </div>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start is-link">
+                    <a class="navbar-item" href="index.html">
+                        Landing Page
+                    </a>  
+                </div>
+        </nav>
   <!-- header -->
-  <section class="hero is-primary is-bold">
+ <section class="hero is-dark">
     <!-- todo: change assignment and name -->
     <div class="hero-body">
       <div class="container">
@@ -36,7 +55,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
 
           <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
+            <a class="navbar-item" href="oldindex.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
@@ -47,7 +66,7 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Data and Processing Content</span>
+              <span>Data Processing Content</span>
             </a>
 
 
@@ -55,28 +74,28 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (John Murray)</span>
+              <span>Visualization 1</span>
             </a>
 
             <a class="navbar-item" href="visualization_tony.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Tony Jimenez)</span>
+              <span>Visualization 2</span>
             </a>
 
             <a class="navbar-item" href="visualization_derrick.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Derrick Shiu)</span>
+              <span>Visualization 3</span>
             </a>
 
             <a class="navbar-item" href="prototype.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Prototype Content</span>
+              <span>Prototypes</span>
             </a>
           </div>
 

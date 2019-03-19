@@ -6,18 +6,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CS 360/560 Spring 2019</title>
+  <title>Midterm Project</title>
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.7.4/css/bulma.min.css'>
+  <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="tabs.css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+  <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    .x-axis .tick line {
+      stroke: #EFEFEF;
+    }
+    path {
+      animation: dash 4s linear infinite;
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -16;
+      }
+    }
+  </style>
 </head>
 
 <!-- body -->
 <body>
+  <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item" >
+                    <img src="favicon.ico">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start is-link">
+                    <a class="navbar-item" href="index.html">
+                        Landing Page
+                    </a>  
+                </div>
+        </nav>
 
   <!-- header -->
-  <section class="hero is-primary is-bold">
+   <section class="hero is-dark">
     <!-- todo: change assignment and name -->
     <div class="hero-body">
       <div class="container">
@@ -30,13 +68,12 @@
       </div>
     </div>
 
-    <!-- todo: change navigation as needed -->
-    <div class="hero-foot">
+  <div class="hero-foot">
       <div class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
 
           <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
+            <a class="navbar-item" href="oldindex.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
@@ -47,7 +84,7 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Data and Processing Content</span>
+              <span>Data Processing Content</span>
             </a>
 
 
@@ -55,28 +92,28 @@
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (John Murray)</span>
+              <span>Visualization 1</span>
             </a>
 
             <a class="navbar-item" href="visualization_tony.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Tony Jimenez)</span>
+              <span>Visualization 2</span>
             </a>
 
             <a class="navbar-item" href="visualization_derrick.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Visualization (Derrick Shiu)</span>
+              <span>Visualization 3</span>
             </a>
 
             <a class="navbar-item" href="prototype.html">
               <span class="icon">
                 <i class="fas fa-home"></i>
               </span>
-              <span>Prototype Content</span>
+              <span>Prototypes</span>
             </a>
           </div>
 
@@ -100,6 +137,673 @@
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
       <h3>John's Visualization</h3>
+      <svg width="900" height="500"></svg>
+  <script> 
+    function generateRandomData(days){
+      var randomData = [];
+      
+      
+       randomData.push({month: 'december', day: 1, records: 6});
+       randomData.push({month: 'december', day: 2, records: 14});
+       randomData.push({month: 'december', day: 3, records: 2});
+       randomData.push({month: 'december', day: 4, records: 3});
+       randomData.push({month: 'december', day: 5, records: 17});
+       randomData.push({month: 'december', day: 6, records: 12});
+       randomData.push({month: 'december', day: 7, records: 12});
+       randomData.push({month: 'december', day: 8, records: 3});
+       randomData.push({month: 'december', day: 9, records: 2});
+       randomData.push({month: 'december', day: 10, records: 32});
+       randomData.push({month: 'december', day: 11, records: 3});
+       randomData.push({month: 'december', day: 12, records: 19});
+       randomData.push({month: 'december', day: 13, records: 27});
+       randomData.push({month: 'december', day: 14, records: 10});
+       randomData.push({month: 'december', day: 15, records: 3});
+       randomData.push({month: 'december', day: 16, records: 15});
+       randomData.push({month: 'december', day: 17, records: 2});
+       randomData.push({month: 'december', day: 18, records: 20});
+       randomData.push({month: 'december', day: 19, records: 0});
+       randomData.push({month: 'december', day: 20, records: 0});
+       randomData.push({month: 'december', day: 21, records: 0});
+       randomData.push({month: 'december', day: 22, records: 14});
+       randomData.push({month: 'december', day: 23, records: 42});
+       randomData.push({month: 'december', day: 24, records: 0});
+       randomData.push({month: 'december', day: 25, records: 11});
+       randomData.push({month: 'december', day: 26, records: 16});
+       randomData.push({month: 'december', day: 27, records: 28});
+       randomData.push({month: 'december', day: 28, records: 16});
+       randomData.push({month: 'december', day: 29, records: 7});
+       randomData.push({month: 'december', day: 30, records: 5});
+       randomData.push({month: 'december', day: 31, records: 3});
+      
+        randomData.push({month: 'november', day: 1, records: 23});
+        randomData.push({month: 'november', day: 2, records: 15});
+        randomData.push({month: 'november', day: 3, records: 2});
+        randomData.push({month: 'november', day: 4, records: 12});
+        randomData.push({month: 'november', day: 5, records: 0});
+        randomData.push({month: 'november', day: 6, records: 4});
+        randomData.push({month: 'november', day: 7, records: 15});
+        randomData.push({month: 'november', day: 8, records: 22});
+        randomData.push({month: 'november', day: 9, records: 23});
+        randomData.push({month: 'november', day: 10, records: 7});
+        randomData.push({month: 'november', day: 11, records: 15});
+        randomData.push({month: 'november', day: 12, records: 3});
+        randomData.push({month: 'november', day: 13, records: 3});
+        randomData.push({month: 'november', day: 14, records: 0});
+        randomData.push({month: 'november', day: 15, records: 30});
+        randomData.push({month: 'november', day: 16, records: 27});
+        randomData.push({month: 'november', day: 17, records: 30});
+        randomData.push({month: 'november', day: 18, records: 7});
+        randomData.push({month: 'november', day: 19, records: 7});
+        randomData.push({month: 'november', day: 20, records: 22});
+        randomData.push({month: 'november', day: 21, records: 4});
+        randomData.push({month: 'november', day: 22, records: 0});
+        randomData.push({month: 'november', day: 23, records: 1});
+        randomData.push({month: 'november', day: 24, records: 17});
+        randomData.push({month: 'november', day: 25, records: 28});
+        randomData.push({month: 'november', day: 26, records: 4});
+        randomData.push({month: 'november', day: 27, records: 31});
+        randomData.push({month: 'november', day: 28, records: 23});
+        randomData.push({month: 'november', day: 29, records: 16});
+        randomData.push({month: 'november', day: 30, records: 2});
+        randomData.push({month: 'november', day: 31, records: 0});
+      
+        randomData.push({month: 'october', day: 1, records: 0});
+        randomData.push({month: 'october', day: 2, records: 16});
+        randomData.push({month: 'october', day: 3, records: 10});
+        randomData.push({month: 'october', day: 4, records: 10});
+        randomData.push({month: 'october', day: 5, records: 0});
+        randomData.push({month: 'october', day: 6, records: 40});
+        randomData.push({month: 'october', day: 7, records: 2});
+        randomData.push({month: 'october', day: 8, records: 2});
+        randomData.push({month: 'october', day: 9, records: 18});
+        randomData.push({month: 'october', day: 10, records: 0});
+        randomData.push({month: 'october', day: 11, records: 22});
+        randomData.push({month: 'october', day: 12, records: 1});
+        randomData.push({month: 'october', day: 13, records: 27});
+        randomData.push({month: 'october', day: 14, records: 16});
+        randomData.push({month: 'october', day: 15, records: 17});
+        randomData.push({month: 'october', day: 16, records: 15});
+        randomData.push({month: 'october', day: 17, records: 57});
+        randomData.push({month: 'october', day: 18, records: 2});
+        randomData.push({month: 'october', day: 19, records: 0});
+        randomData.push({month: 'october', day: 20, records: 14});
+        randomData.push({month: 'october', day: 21, records: 24});
+        randomData.push({month: 'october', day: 22, records: 2});
+        randomData.push({month: 'october', day: 23, records: 13});
+        randomData.push({month: 'october', day: 24, records: 12});
+        randomData.push({month: 'october', day: 25, records: 1});
+        randomData.push({month: 'october', day: 26, records: 4});
+        randomData.push({month: 'october', day: 27, records: 2});
+        randomData.push({month: 'october', day: 28, records: 16});
+        randomData.push({month: 'october', day: 29, records: 13});
+        randomData.push({month: 'october', day: 30, records: 17});
+        randomData.push({month: 'october', day: 31, records: 33});
+      
+        randomData.push({month: 'september', day: 1, records: 9});
+        randomData.push({month: 'september', day: 2, records: 4});
+        randomData.push({month: 'september', day: 3, records: 6});
+        randomData.push({month: 'september', day: 4, records: 26});
+        randomData.push({month: 'september', day: 5, records: 23});
+        randomData.push({month: 'september', day: 6, records: 14});
+        randomData.push({month: 'september', day: 7, records: 26});
+        randomData.push({month: 'september', day: 8, records: 0});
+        randomData.push({month: 'september', day: 9, records: 16});
+        randomData.push({month: 'september', day: 10, records: 11});
+        randomData.push({month: 'september', day: 11, records: 18});
+        randomData.push({month: 'september', day: 12, records: 5});
+        randomData.push({month: 'september', day: 13, records: 4});
+        randomData.push({month: 'september', day: 14, records: 4});
+        randomData.push({month: 'september', day: 15, records: 11});
+        randomData.push({month: 'september', day: 16, records: 3});
+        randomData.push({month: 'september', day: 17, records: 12});
+        randomData.push({month: 'september', day: 18, records: 3});
+        randomData.push({month: 'september', day: 19, records: 0});
+        randomData.push({month: 'september', day: 20, records: 17});
+        randomData.push({month: 'september', day: 21, records: 15});
+        randomData.push({month: 'september', day: 22, records: 6});
+        randomData.push({month: 'september', day: 23, records: 23});
+        randomData.push({month: 'september', day: 24, records: 15});
+        randomData.push({month: 'september', day: 25, records: 15});
+        randomData.push({month: 'september', day: 26, records: 4});
+        randomData.push({month: 'september', day: 27, records: 0});
+        randomData.push({month: 'september', day: 28, records: 12});
+        randomData.push({month: 'september', day: 29, records: 23});
+        randomData.push({month: 'september', day: 30, records: 13});
+        randomData.push({month: 'september', day: 31, records: 0});
+      
+        randomData.push({month: 'august', day: 1, records: 7});
+        randomData.push({month: 'august', day: 2, records: 33});
+        randomData.push({month: 'august', day: 3, records: 22});
+        randomData.push({month: 'august', day: 4, records: 10});
+        randomData.push({month: 'august', day: 5, records: 4});
+        randomData.push({month: 'august', day: 6, records: 11});
+        randomData.push({month: 'august', day: 7, records: 4});
+        randomData.push({month: 'august', day: 8, records: 4});
+        randomData.push({month: 'august', day: 9, records: 2});
+        randomData.push({month: 'august', day: 10, records: 12});
+        randomData.push({month: 'august', day: 11, records: 5});
+        randomData.push({month: 'august', day: 12, records: 25});
+        randomData.push({month: 'august', day: 13, records: 3});
+        randomData.push({month: 'august', day: 14, records: 0});
+        randomData.push({month: 'august', day: 15, records: 17});
+        randomData.push({month: 'august', day: 16, records: 18});
+        randomData.push({month: 'august', day: 17, records: 15});
+        randomData.push({month: 'august', day: 18, records: 5});
+        randomData.push({month: 'august', day: 19, records: 20});
+        randomData.push({month: 'august', day: 20, records: 0});
+        randomData.push({month: 'august', day: 21, records: 4});
+        randomData.push({month: 'august', day: 22, records: 4});
+        randomData.push({month: 'august', day: 23, records: 1});
+        randomData.push({month: 'august', day: 24, records: 4});
+        randomData.push({month: 'august', day: 25, records: 4});
+        randomData.push({month: 'august', day: 26, records: 23});
+        randomData.push({month: 'august', day: 27, records: 48});
+        randomData.push({month: 'august', day: 28, records: 12});
+        randomData.push({month: 'august', day: 29, records: 3});
+        randomData.push({month: 'august', day: 30, records: 28});
+        randomData.push({month: 'august', day: 31, records: 14});
+      
+        randomData.push({month: 'july', day: 1, records: 19});
+        randomData.push({month: 'july', day: 2, records: 21});
+        randomData.push({month: 'july', day: 3, records: 5});
+        randomData.push({month: 'july', day: 4, records: 34});
+        randomData.push({month: 'july', day: 5, records: 31});
+        randomData.push({month: 'july', day: 6, records: 3});
+        randomData.push({month: 'july', day: 7, records: 0});
+        randomData.push({month: 'july', day: 8, records: 5});
+        randomData.push({month: 'july', day: 9, records: 14});
+        randomData.push({month: 'july', day: 10, records: 3});
+        randomData.push({month: 'july', day: 11, records: 25});
+        randomData.push({month: 'july', day: 12, records: 12});
+        randomData.push({month: 'july', day: 13, records: 24});
+        randomData.push({month: 'july', day: 14, records: 29});
+        randomData.push({month: 'july', day: 15, records: 5});
+        randomData.push({month: 'july', day: 16, records: 2});
+        randomData.push({month: 'july', day: 17, records: 3});
+        randomData.push({month: 'july', day: 18, records: 10});
+        randomData.push({month: 'july', day: 19, records: 11});
+        randomData.push({month: 'july', day: 20, records: 21});
+        randomData.push({month: 'july', day: 21, records: 0});
+        randomData.push({month: 'july', day: 22, records: 17});
+        randomData.push({month: 'july', day: 23, records: 11});
+        randomData.push({month: 'july', day: 24, records: 13});
+        randomData.push({month: 'july', day: 25, records: 3});
+        randomData.push({month: 'july', day: 26, records: 3});
+        randomData.push({month: 'july', day: 27, records: 13});
+        randomData.push({month: 'july', day: 28, records: 14});
+        randomData.push({month: 'july', day: 29, records: 22});
+        randomData.push({month: 'july', day: 30, records: 13});
+        randomData.push({month: 'july', day: 31, records: 16});
+
+      
+        randomData.push({month: 'june', day: 1, records: 23});
+        randomData.push({month: 'june', day: 2, records: 8});
+        randomData.push({month: 'june', day: 3, records: 2});
+        randomData.push({month: 'june', day: 4, records: 15});
+        randomData.push({month: 'june', day: 5, records: 20});
+        randomData.push({month: 'june', day: 6, records: 2});
+        randomData.push({month: 'june', day: 7, records: 5});
+        randomData.push({month: 'june', day: 8, records: 13});
+        randomData.push({month: 'june', day: 9, records: 0});
+        randomData.push({month: 'june', day: 10, records: 13});
+        randomData.push({month: 'june', day: 11, records: 11});
+        randomData.push({month: 'june', day: 12, records: 17});
+        randomData.push({month: 'june', day: 13, records: 5});
+        randomData.push({month: 'june', day: 14, records: 11});
+        randomData.push({month: 'june', day: 15, records: 2});
+        randomData.push({month: 'june', day: 16, records: 10});
+        randomData.push({month: 'june', day: 17, records: 19});
+        randomData.push({month: 'june', day: 18, records: 6});
+        randomData.push({month: 'june', day: 19, records: 18});
+        randomData.push({month: 'june', day: 20, records: 9});
+        randomData.push({month: 'june', day: 21, records: 1});
+        randomData.push({month: 'june', day: 22, records: 13});
+        randomData.push({month: 'june', day: 23, records: 11});
+        randomData.push({month: 'june', day: 24, records: 24});
+        randomData.push({month: 'june', day: 25, records: 0});
+        randomData.push({month: 'june', day: 26, records: 13});
+        randomData.push({month: 'june', day: 27, records: 0});
+        randomData.push({month: 'june', day: 28, records: 10});
+        randomData.push({month: 'june', day: 29, records: 0});
+        randomData.push({month: 'june', day: 30, records: 3});
+        randomData.push({month: 'june', day: 31, records: 0});
+      
+        randomData.push({month: 'may', day: 1, records: 7});
+        randomData.push({month: 'may', day: 2, records: 40});
+        randomData.push({month: 'may', day: 3, records: 5});
+        randomData.push({month: 'may', day: 4, records: 2});
+        randomData.push({month: 'may', day: 5, records: 1});
+        randomData.push({month: 'may', day: 6, records: 3});
+        randomData.push({month: 'may', day: 7, records: 5});
+        randomData.push({month: 'may', day: 8, records: 10});
+        randomData.push({month: 'may', day: 9, records: 14});
+        randomData.push({month: 'may', day: 10, records: 2});
+        randomData.push({month: 'may', day: 11, records: 4});
+        randomData.push({month: 'may', day: 12, records: 11});
+        randomData.push({month: 'may', day: 13, records: 2});
+        randomData.push({month: 'may', day: 14, records: 19});
+        randomData.push({month: 'may', day: 15, records: 6});
+        randomData.push({month: 'may', day: 16, records: 24});
+        randomData.push({month: 'may', day: 17, records: 15});
+        randomData.push({month: 'may', day: 18, records: 4});
+        randomData.push({month: 'may', day: 19, records: 36});
+        randomData.push({month: 'may', day: 20, records: 18});
+        randomData.push({month: 'may', day: 21, records: 0});
+        randomData.push({month: 'may', day: 22, records: 10});
+        randomData.push({month: 'may', day: 23, records: 69});
+        randomData.push({month: 'may', day: 24, records: 3});
+        randomData.push({month: 'may', day: 25, records: 4});
+        randomData.push({month: 'may', day: 26, records: 9});
+        randomData.push({month: 'may', day: 27, records: 4});
+        randomData.push({month: 'may', day: 28, records: 26});
+        randomData.push({month: 'may', day: 29, records: 3});
+        randomData.push({month: 'may', day: 30, records: 3});
+        randomData.push({month: 'may', day: 31, records: 11});
+      
+        randomData.push({month: 'april', day: 1, records: 2});
+        randomData.push({month: 'april', day: 2, records: 10});
+        randomData.push({month: 'april', day: 3, records: 17});
+        randomData.push({month: 'april', day: 4, records: 12});
+        randomData.push({month: 'april', day: 5, records: 2});
+        randomData.push({month: 'april', day: 6, records: 15});
+        randomData.push({month: 'april', day: 7, records: 10});
+        randomData.push({month: 'april', day: 8, records: 3});
+        randomData.push({month: 'april', day: 9, records: 16});
+        randomData.push({month: 'april', day: 10, records: 38});
+        randomData.push({month: 'april', day: 11, records: 14});
+        randomData.push({month: 'april', day: 12, records: 0});
+        randomData.push({month: 'april', day: 13, records: 0});
+        randomData.push({month: 'april', day: 14, records: 15});
+        randomData.push({month: 'april', day: 15, records: 11});
+        randomData.push({month: 'april', day: 16, records: 37});
+        randomData.push({month: 'april', day: 17, records: 20});
+        randomData.push({month: 'april', day: 18, records: 24});
+        randomData.push({month: 'april', day: 19, records: 13});
+        randomData.push({month: 'april', day: 20, records: 26});
+        randomData.push({month: 'april', day: 21, records: 5});
+        randomData.push({month: 'april', day: 22, records: 11});
+        randomData.push({month: 'april', day: 23, records: 6});
+        randomData.push({month: 'april', day: 24, records: 18});
+        randomData.push({month: 'april', day: 25, records: 2});
+        randomData.push({month: 'april', day: 26, records: 17});
+        randomData.push({month: 'april', day: 27, records: 17});
+        randomData.push({month: 'april', day: 28, records: 25});
+        randomData.push({month: 'april', day: 29, records: 0});
+        randomData.push({month: 'april', day: 30, records: 0});
+        randomData.push({month: 'april', day: 31, records: 0});
+      
+        randomData.push({month: 'march', day: 1, records: 27});
+        randomData.push({month: 'march', day: 2, records: 36});
+        randomData.push({month: 'march', day: 3, records: 0});
+        randomData.push({month: 'march', day: 4, records: 22});
+        randomData.push({month: 'march', day: 5, records: 13});
+        randomData.push({month: 'march', day: 6, records: 22});
+        randomData.push({month: 'march', day: 7, records: 2});
+        randomData.push({month: 'march', day: 8, records: 2});
+        randomData.push({month: 'march', day: 9, records: 15});
+        randomData.push({month: 'march', day: 10, records: 27});
+        randomData.push({month: 'march', day: 11, records: 24});
+        randomData.push({month: 'march', day: 12, records: 15});
+        randomData.push({month: 'march', day: 13, records: 26});
+        randomData.push({month: 'march', day: 14, records: 5});
+        randomData.push({month: 'march', day: 15, records: 4});
+        randomData.push({month: 'march', day: 16, records: 13});
+        randomData.push({month: 'march', day: 17, records: 30});
+        randomData.push({month: 'march', day: 18, records: 7});
+        randomData.push({month: 'march', day: 19, records: 30});
+        randomData.push({month: 'march', day: 20, records: 0});
+        randomData.push({month: 'march', day: 21, records: 1});
+        randomData.push({month: 'march', day: 22, records: 14});
+        randomData.push({month: 'march', day: 23, records: 0});
+        randomData.push({month: 'march', day: 24, records: 0});
+        randomData.push({month: 'march', day: 25, records: 2});
+        randomData.push({month: 'march', day: 26, records: 16});
+        randomData.push({month: 'march', day: 27, records: 16});
+        randomData.push({month: 'march', day: 28, records: 5});
+        randomData.push({month: 'march', day: 29, records: 7});
+        randomData.push({month: 'march', day: 30, records: 12});
+        randomData.push({month: 'march', day: 31, records: 0});
+      
+        randomData.push({month: 'february', day: 1, records: 13});
+        randomData.push({month: 'february', day: 2, records: 16});
+        randomData.push({month: 'february', day: 3, records: 4});
+        randomData.push({month: 'february', day: 4, records: 14});
+        randomData.push({month: 'february', day: 5, records: 4});
+        randomData.push({month: 'february', day: 6, records: 19});
+        randomData.push({month: 'february', day: 7, records: 0});
+        randomData.push({month: 'february', day: 8, records: 16});
+        randomData.push({month: 'february', day: 9, records: 10});
+        randomData.push({month: 'february', day: 10, records: 4});
+        randomData.push({month: 'february', day: 11, records: 3});
+        randomData.push({month: 'february', day: 12, records: 27});
+        randomData.push({month: 'february', day: 13, records: 41});
+        randomData.push({month: 'february', day: 14, records: 11});
+        randomData.push({month: 'february', day: 15, records: 6});
+        randomData.push({month: 'february', day: 16, records: 5});
+        randomData.push({month: 'february', day: 17, records: 2});
+        randomData.push({month: 'february', day: 18, records: 5});
+        randomData.push({month: 'february', day: 19, records: 13});
+        randomData.push({month: 'february', day: 20, records: 1});
+        randomData.push({month: 'february', day: 21, records: 13});
+        randomData.push({month: 'february', day: 22, records: 9});
+        randomData.push({month: 'february', day: 23, records: 14});
+        randomData.push({month: 'february', day: 24, records: 10});
+        randomData.push({month: 'february', day: 25, records: 5});
+        randomData.push({month: 'february', day: 26, records: 0});
+        randomData.push({month: 'february', day: 27, records: 7});
+        randomData.push({month: 'february', day: 28, records: 12});
+        randomData.push({month: 'february', day: 29, records: 0});
+        randomData.push({month: 'february', day: 30, records: 0});
+        randomData.push({month: 'february', day: 31, records: 0});
+      
+        randomData.push({month: 'january', day: 1, records: 40});
+        randomData.push({month: 'january', day: 2, records: 3});
+        randomData.push({month: 'january', day: 3, records: 4});
+        randomData.push({month: 'january', day: 4, records: 20});
+        randomData.push({month: 'january', day: 5, records: 12});
+        randomData.push({month: 'january', day: 6, records: 15});
+        randomData.push({month: 'january', day: 7, records: 15});
+        randomData.push({month: 'january', day: 8, records: 3});
+        randomData.push({month: 'january', day: 9, records: 21});
+        randomData.push({month: 'january', day: 10, records: 12});
+        randomData.push({month: 'january', day: 11, records: 12});
+        randomData.push({month: 'january', day: 12, records: 18});
+        randomData.push({month: 'january', day: 13, records: 15});
+        randomData.push({month: 'january', day: 14, records: 11});
+        randomData.push({month: 'january', day: 15, records: 14});
+        randomData.push({month: 'january', day: 16, records: 12});
+        randomData.push({month: 'january', day: 17, records: 0});
+        randomData.push({month: 'january', day: 18, records: 3});
+        randomData.push({month: 'january', day: 19, records: 4});
+        randomData.push({month: 'january', day: 20, records: 16});
+        randomData.push({month: 'january', day: 21, records: 3});
+        randomData.push({month: 'january', day: 22, records: 2});
+        randomData.push({month: 'january', day: 23, records: 10});
+        randomData.push({month: 'january', day: 24, records: 1});
+        randomData.push({month: 'january', day: 25, records: 15});
+        randomData.push({month: 'january', day: 26, records: 5});
+        randomData.push({month: 'january', day: 27, records: 12});
+        randomData.push({month: 'january', day: 28, records: 8});
+        randomData.push({month: 'january', day: 29, records: 23});
+        randomData.push({month: 'january', day: 30, records: 32});
+        randomData.push({month: 'january', day: 31, records: 17});
+      
+        
+      
+      return randomData;
+
+      function _randomdecemberData(){return Math.min(0.04, Math.random()/10);}
+      function _randomnovemberData(){return Math.min(0.11, Math.random()/8);}
+      function _randommayData(){return Math.min(0.25, Math.random()/4);}
+      
+    }
+  </script>
+  <script>
+    
+              
+          
+var ordinal = d3.scaleOrdinal()
+  .domain(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])
+//     .domain(["October", "July", "March", "November", "April", "January", "May", "August", "December", "September", "February", "June"])
+//   .range(["#c43141", "#ca3a42", "#d04344", "#e15c48", "#e66549", "#eb6e49", "#f7894b", "#fb934d", "#fa9d4f", "#f6bc58", "#f5c75f", "#f4d166"]);
+    
+
+
+    .range(["#f7894b", "#ca3a42", "#f6bc58", "#fb934d", "#eb6e49", "#c43141", "#f5c75f", "#e66549", "#d04344", "#f4d166", "#fa9d4f", "#e15c48"]);
+        
+    ////// COMPOSE DATA
+    var taxData = generateRandomData(20, 100000);
+    var taxDataByday = d3.nest()
+      .key(function(d){return d.day;})
+      .entries(taxData);
+    var taxDataBymonth = d3.nest()
+      .key(function(d){return d.month;})
+      .entries(taxData);
+    var taxDataForStack = taxDataByday.reduce(function(taxData, data){
+      var newData = {day: data.key};
+      data.values.forEach(function(d){newData[d.month] = d.records;});
+      taxData.push(newData);
+      return taxData;
+    }, [])
+    
+         // (['december', 'november','october', 'september', 'august', 'july', 'june', 'may', 'april', 'march', 'february', january,])
+    var days = taxDataByday.map(function(d){return +d.key;})
+    var decemberTaxData = taxDataBymonth[0].values;
+    var novemberTaxData = taxDataBymonth[1].values;
+    var octoberTaxData = taxDataBymonth[2].values;
+    var septemberTaxData = taxDataBymonth[3].values;
+    var augustTaxData = taxDataBymonth[4].values;
+    var julyTaxData = taxDataBymonth[5].values;
+    var juneTaxData = taxDataBymonth[6].values;
+    var mayTaxData = taxDataBymonth[7].values;
+    var aprilTaxData = taxDataBymonth[8].values;
+    var marchTaxData = taxDataBymonth[9].values;
+    var februaryTaxData = taxDataBymonth[10].values;
+    var januaryTaxData = taxDataBymonth[11].values;
+
+    
+    ////// SETUP CONTAINERS
+    var svg = d3.select('svg')
+    var margin = {top: 40, right: 100, bottom: 50, left: 60};
+    var height = +svg.attr('height') - margin.top - margin.bottom;
+    var width = +svg.attr('width') - margin.left - margin.right;
+    var chartPadding = 15;
+    var chartHeight = height / taxDataBymonth.length - 15;
+    
+    
+    svg.append("g")
+      .attr("class", "legendOrdinal")
+      .attr("transform", "translate(836,20)");
+    
+    //Create Title 
+    svg.append("text")
+      .attr("x", 315)
+      .attr("y", 15)
+      .style("text-anchor", "middle")
+      .text("Number of Fires that occur in the Lone Mountain/USF Area during each Month from 2009-2018");
+
+   //x-axis label
+    svg.append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "end")
+      .attr("x", 460)
+      .attr("y", 478)
+      .text("Call Date");
+
+   //y-axis label
+    svg.append("text")
+      .attr("class", "y label")
+      .attr("text-anchor", "end")
+      .attr("y", 14)
+      .attr("x", -180)
+      .attr("dy", ".75em")
+      .attr("transform", "rotate(-90)")
+      .text("Number of Records");
+
+    var legendOrdinal = d3.legendColor()
+      //d3 symbol creates a path-string, for example
+      //"M0,-8.059274488676564L9.306048591020996,
+      //8.059274488676564 -9.306048591020996,8.059274488676564Z"
+      .shape("path", d3.symbol().type(d3.symbolSquare).size(150)())
+    
+      .shapePadding(4.5)
+      //use cellFilter to hide the "e" cell
+      .scale(ordinal);
+      
+
+    svg.select(".legendOrdinal")
+      .call(legendOrdinal)
+      .attr("transform" ,"translate(" + 810 +"," + 46 +")" );
+
+    ////// COMPOSE GENERATORS
+// .range(["#c43141", "#ca3a42", "#d04344", "#e15c48", "#e66549", "#eb6e49", "#f7894b", "#fb934d", "#fa9d4f", "#f6bc58", "#f5c75f", "#f4d166"]);
+    
+    
+
+// "#eb6e49", "#f5c75f", "#d04344", "#e66549", "#f7894b", "#f4d166", "#ca3a42", "#fb934d", "#f6bc58", "#c43141", "#e15c48", "#fa9d4f"
+    var generators = {
+      'shared': {
+        color: d3.scaleOrdinal().domain(['december', 'november','october', 'september', 'august', 'july', 'june', 'may', 'april', 'march', 'february', 'january']).range(["#e15c48", "#fa9d4f", "#f4d166", "#d04344", "#e66549", "#f5c75f", "#c43141", "#eb6e49", "#fb934d", "#f6bc58", "#ca3a42", "#f7894b"]),
+        stack: d3.stack().keys(['december', 'november','october', 'september', 'august', 'july', 'june', 'may', 'april', 'march', 'february', 'january']).order(d3.stackOrderDescending).offset(d3.stackOffsetNone),
+        x: d3.scaleLinear().domain([d3.min(days), d3.max(days)]).range([0, width]),
+        y: d3.scaleLinear().domain([d3.max(mayTaxData, function(d){return d.records}), 0]).range([0, height])
+      },
+      'december': {},
+      'november': {},
+      'october': {},
+      'september': {},
+      'august': {},
+      'july': {},
+      'june': {},
+      'may': {y: d3.scaleLinear().domain([d3.max(mayTaxData, function(d){return d.records}), 0]).range([0, chartHeight])},
+      'april': {},
+      'march': {},
+      'february': {},
+      'january': {}
+    };
+    var stackTaxData = generators.shared.stack(taxDataForStack);
+    var maxStackData = d3.max(stackTaxData, function(d){return d3.max(d, function(d){return d[1];});});
+    
+    generators.shared.xAxis = d3.axisBottom(generators.shared.x).tickValues(days).tickSizeInner(-height);
+    generators.shared.y = d3.scaleLinear().domain([maxStackData, 0]).range([0, height]);
+    generators.shared.yAxis = d3.axisLeft(generators.shared.y);
+    generators.shared.area = d3.area().x(function(d){return generators.shared.x(d.data.day);})
+      .y0(function(d){return generators.shared.y(d[0]);}).y1(function(d){return generators.shared.y(d[1]);})
+//       .curve(d3.curveMonotoneX)
+    
+    generators.january.area = d3.area(januaryTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+    generators.february.area = d3.area(februaryTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.march.area = d3.area(marchTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+    generators.april.area = d3.area(aprilTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+    generators.may.area = d3.area(mayTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.june.area = d3.area(juneTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.july.area = d3.area(julyTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.august.area = d3.area(augustTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.september.area = d3.area(septemberTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.october.area = d3.area(octoberTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.november.area = d3.area(novemberTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.december.area = d3.area(decemberTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+    
+        generators.may.yAxis = d3.axisLeft(generators.may.y).ticks(4);
+    generators.may.area = d3.area(mayTaxData).x(function(d){return generators.shared.x(d.day);})
+      .y0(function(d){return generators.may.y(0);}).y1(function(d){return generators.may.y(d.records);})
+//       .curve(d3.curveMonotoneX);
+
+    ////// MAKE IT ALIVE!
+    var grouping = svg.append('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    grouping.append('g')
+      .call(generators.shared.xAxis)
+      .attr('transform', 'translate(0,' + height + ')')
+      .attr('class', 'x-axis');
+
+    containers = grouping.selectAll('.containers').data(taxDataBymonth).enter()
+      .append('g')
+        .attr('transform', function(d, i){ return 'translate(0, ' + ((chartHeight + chartPadding) * i) + ')'; })
+        .attr('class', 'containers')
+    containers.append('g')
+        .attr('class', 'y-axis')
+        .call(generators.may.yAxis)
+    containers.append('path')
+        .attr('d', function(d){return generators[d.key].area(d.values);})
+        .attr('class', 'stack-container')
+        .attr('stroke', 'gray')
+//         .attr('stroke-dasharray', '8 8')
+        .attr('fill', function(d){return generators.shared.color(d.key)})
+    .append("title")
+      .text(function(d){
+        console.log(d);
+      var date = d.key;
+      date = date.charAt(0).toUpperCase() + date.slice(1);
+      var sum = 0;
+        for (i = 0; i < d.values.length; i++) {
+          sum += d.values[i].records;
+      }
+      var recordsPerDay = 0;
+        for (j = 0; j < d.values.length; j++) {
+          recordsPerDay = d.values[j].day;
+      }
+      return "Month: " + date + "\nTotal Records: " + sum;
+//       return "Month: " + d.key + "\nDay Record: " + recordsPerDay + "\nTotal Records: " + sum;
+    });
+    
+    d3.selectAll("path.stack-container").on("mouseover", function(d) {  d3.select(this).style("fill", "springgreen"); })
+    
+    
+    d3.selectAll("path.stack-container").on("mouseout", function(d) {     d3.select(this).style("fill", function(d){return generators.shared.color(d.key)}); })
+    d3.selectAll("path.stack-container").append("title").text(function(d) {
+            return d;
+          });
+
+    var stacked = false;
+    setInterval(function(){
+      var selection = d3.selectAll('.containers')
+      document.onclick = function(){
+      if (stacked){
+        selection.data(taxDataBymonth);
+        selection
+          .transition().duration(1000)
+            .attr('transform', function(d, i){ return 'translate(0, ' + ((chartHeight + chartPadding) * i) + ')'; })
+          .select('.y-axis')
+            .call(generators.may.yAxis);
+
+        selection.select('.stack-container')
+          .transition().duration(1000)
+            .attr('d', function(d){return generators[d.key].area(d.values);});
+      } else {
+        selection.data(stackTaxData);
+
+        selection
+          .transition().duration(1000)
+            .attr('transform', 'translate(0,0)')
+          .select('.y-axis')
+            .call(generators.shared.yAxis)
+
+        selection.select('.stack-container')
+          .transition().duration(1000)
+            .attr('d', generators.shared.area);
+      }
+      stacked = !stacked;
+      }
+    }, 4000)
+    
+  </script>
 
     </div>
   </section>

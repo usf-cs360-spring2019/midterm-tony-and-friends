@@ -21,11 +21,7 @@
                 <a class="navbar-item" >
                     <img src="favicon.ico">
                 </a>
-                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                
             </div>
             <div id="navbarExampleTransparentExample" class="navbar-menu">
                 <div class="navbar-start is-link">
@@ -48,9 +44,11 @@
             <div class="tabs is-boxed is-centered main-menu" id="nav">
                 <ul>
                     <li data-target="pane-1" id="1" class="is-active">
+                    	
                         <a>
                             <span class="icon is-small"><i class="fa fa-home"></i></span>
                             <span>Home</span>
+
                         </a>
                     </li>
                     <li data-target="pane-2" id="2">
@@ -108,157 +106,12 @@
                 <div class="tab-pane" id="pane-3">
                     <div class="content">
                         <h3>John's Visualization</h3>
-                            <svg id="tab1" width = "900" height="500"></svg>
+                            <svg id="tab2" width = "900" height="500"></svg>
                     </div>
                 </div>
                 <div class="tab-pane" id="pane-4">
                     <div class="tab-content">
                         <h3>Tony's Visualization</h3>
-                            
-                                <svg id="tab1" width = "900" height="500"></svg>
-                            <p>
-                              Hello
-                              
-                            </p>
-                            <script>
-                            /* helper method to make translating easier */
-    var translate = function(x, y) {
-      return "translate(" + x + "," + y + ")";
-    };
-    // container for configuration parameters
-    var config = {};
-    config.svg = {
-      width: 960,
-      height: 500
-    };
-    config.margin = {
-      top: 50,
-      right: 10,
-      bottom: 20,
-      left: 40
-    };
-    config.plot = {
-      width: config.svg.width - config.margin.right - config.margin.left,
-      height: config.svg.height - config.margin.top - config.margin.bottom
-    };
-    config.legend = {
-      width: 200,
-      height: 15
-    };
-    // create svg based on config
-    var svg = d3.select("body").select("svg#tab1")
-      .attr("width", config.svg.width)
-      .attr("height", config.svg.height);
-    // create plot area based on config
-    var plot = svg.append("g")
-      .attr("id", "plot")
-      .attr("transform", translate(config.margin.left, config.margin.top));
-    // create the scales and set ranges
-    // https:github.com/d3/d3-scale/blob/master/README.md#scaleBand
-    // we only need the plot dimensions for the range!
-    // we will set the domain later when we load the data
-    var xScale = d3.scaleBand()
-      .range([0, config.plot.width]);
-    var yScale = d3.scaleBand()
-      .range([config.plot.height, 0], 0, 0);
-    // create color scale for each cell
-    // https://github.com/d3/d3-scale/blob/master/README.md#scaleSequential
-    var colorScale = d3.scaleSequential(d3.interpolateYlOrRd);
-    // formatter to parse dates
-    // https://github.com/mbostock/d3/wiki/Time-Formatting
-    // must match format used by csv
-    // converts string to date
-    var dateParse = d3.timeParse("%Y-%B");
-    // used to nest data and output values nicely
-    // converts date to string
-    var yearFormat = d3.timeFormat("%Y");
-    var monthFormat = d3.timeFormat("%B");
-    // placeholder for data
-    var data = [];
-    var file = "Monthly_Property_Crime_2005_to_2015.csv";
-    d3.csv(file, rowAccessor, dataCallback);
-    function rowAccessor(d) {
-      var row = {};
-      row.date = dateParse(d["Date"]);
-      row.year = yearFormat(row.date);
-      row.month = monthFormat(row.date);
-      //row.type = d["Category"];
-      row.count = +d["IncidntNum"];
-      return row;
-    }
-    function dataCallback(error, rows) { // callback
-      if (error) {
-        console.warn(error);
-      }
-      // we can use fancy d3 operations to group our data by year and month
-      // https://github.com/d3/d3-collection/blob/master/README.md#nest
-      data = d3.nest()
-        .key(function(d) {
-          return d.year;
-        })
-        // group by year first
-        .key(function(d) {
-          return d.month;
-        })
-        // group by month second
-        .rollup(function(values) {
-          // sum together all of the categories
-          return d3.sum(values, function(d) {
-            return d.count;
-          })
-        })
-        .map(rows, d3.map); // return as nested d3.maps
-      console.log("rows", rows);
-      console.log("nest", data);
-      // pull out years and months
-      // use to set domain of x and y scales
-      var years = data.keys();
-      var months = data.get(years[0]).keys();
-      xScale.domain(months);
-      yScale.domain(years);
-      /*
-       * how will we map our values to those colors?
-       * our first step is to calculate the min and max
-       * the issue now is our sums are nested
-       */
-      // un-nesting these values is a little strange looking
-      // debug each step in the console so you know what is going on
-      // this returns all the values in our map
-      // in this case, our values are themselves maps
-      var values = data.values();
-      // now we have an array of maps
-      // grab the map values for each inner map
-      values = values.map(function(d) {
-        return d.values();
-      });
-      // now we have an array of arrays
-      // merge arrays into a single array
-      values = d3.merge(values);
-      // now we can calculate the extent our counts
-      var extent = d3.extent(values);
-      /*
-       * is this efficient?
-       * goodness no! but if you cared, why are you doing
-       * data processing in javascript!
-       */
-      // use these values as domain for our color scale
-      colorScale.domain(extent);
-      // finally, draw stuff
-      drawBackground();
-      drawAxes();
-      drawHeatmap();
-      drawTitle();
-      drawLegend();
-      
-      d3.selectAll("rect").on("mouseover", function(d) {  d3.select(this).style("fill", "black"); })
-      
-       d3.selectAll("rect").on("mouseout", function(d) {  d3.select(this).style("fill", function(d){return colorScale(d.value)}); })
-    }
-    
-    //d3.selectAll("rect").append("title").text("Hello");
-</script>
-<p> hello2 </p>
-
                     </div>
                 </div>
                 <div class="tab-pane" id="pane-5">
